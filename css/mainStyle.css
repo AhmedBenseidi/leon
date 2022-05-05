@@ -1,0 +1,341 @@
+:root {
+  --backgrond-main-color: #eee;
+  --backgrond-sacand-color: #ddd;
+  --main-color: #333;
+  --sacand-color: #066690;
+  --space-between: 20px;
+  --separaiter: 60px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  color: var(--main-color);
+  text-decoration: none;
+  text-transform: capitalize;
+  line-height: 1.6;
+}
+body {
+  font-family: "Work Sans", sans-serif;
+  transition: all 1s linear;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 980px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+.container {
+  margin: 0px auto;
+  padding: var(--space-between);
+}
+.flex-space-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.grid-padding {
+  padding-top: var(--separaiter);
+  padding-bottom: var(--separaiter);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-between);
+}
+.flex-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+/* End glonel sting */
+header {
+  width: 100%;
+  height: 70px;
+  background-color: var(--backgrond-main-color);
+}
+header .logo {
+  width: 60px;
+}
+header .logo img {
+  width: 100%;
+}
+.icon {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+nav {
+  position: relative;
+}
+nav:hover ul {
+  display: block;
+}
+.icon span {
+  height: 2px;
+  background-color: var(--main-color);
+  border-radius: 1px;
+}
+.icon .one {
+  width: 100%;
+}
+.icon .tow {
+  width: 100%;
+}
+.icon .three {
+  width: 100%;
+}
+nav ul {
+  width: 200px;
+  background-color: var(--backgrond-main-color);
+  list-style: none;
+  position: absolute;
+  right: 0px;
+  top: 40px;
+  display: none;
+  z-index: 200;
+}
+nav ul::before {
+  content: "";
+  border: 15px solid;
+  border-color: transparent transparent var(--backgrond-main-color) transparent;
+  position: absolute;
+  right: 0px;
+  top: -30px;
+}
+nav ul li {
+  padding: 10px var(--space-between);
+  font-size: 20px;
+  opacity: 0.7;
+  transition: all 0.3s linear;
+}
+nav ul li:hover {
+  opacity: 1;
+  padding-left: calc(var(--space-between) * 2);
+  font-weight: bold;
+}
+nav ul li:not(:last-child) {
+  width: 100%;
+  border-bottom: 1px solid var(--backgrond-sacand-color);
+}
+main {
+  width: 100%;
+  height: calc(100vh - 70px);
+  background-image: url(background/Alps.jpg);
+  background-size: cover;
+  position: relative;
+}
+main .welcome-wellpaiper {
+  min-width: 300px;
+  max-width: 100%;
+  text-align: center;
+  padding: var(--space-between);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main .welcome-wellpaiper h1 {
+  color: var(--sacand-color);
+  margin-bottom: var(--space-between);
+}
+main .welcome-wellpaiper p {
+  font-size: 14px;
+  opacity: 0.7;
+}
+.prancipal-function {
+  background-color: var(--backgrond-main-color);
+}
+.card {
+  width: 100%;
+  padding: var(--space-between);
+  background-color: inherit;
+  box-shadow: 1px 1px 5px var(--main-color);
+  display: grid;
+  grid-template-columns: 100px 1fr;
+}
+.card i {
+  color: var(--sacand-color);
+}
+.card p {
+  grid-column: span 2;
+}
+.heder-of-section {
+  padding-top: var(--separaiter);
+  padding-bottom: var(--separaiter);
+  text-align: center;
+}
+.heder-of-section h2 {
+  font-size: 70px;
+  color: var(--backgrond-main-color);
+}
+.heder-of-section p {
+  font-size: 14px;
+  color: var(--main-color);
+  margin-top: -35px;
+  opacity: 0.7;
+}
+.section-image {
+  width: 300px;
+  height: 400px;
+  grid-row: 1 / 3;
+  grid-column: 3 / 3;
+  position: relative;
+}
+.section-image img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+.section-image::before {
+  content: "";
+  width: 140px;
+  height: 500px;
+  background-color: var(--sacand-color);
+  position: absolute;
+  top: -50px;
+  right: -70px;
+  z-index: -1;
+}
+@media (max-width: 992px) {
+  .section-image {
+    display: none;
+  }
+  .about .flex-space-between-center {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
+.Portfolio {
+  width: 100%;
+  background-color: var(--backgrond-main-color);
+}
+.Portfolio h2 {
+  color: var(--backgrond-sacand-color);
+}
+.Portfolio .card img {
+  width: calc(100% + 40px);
+  grid-column: span 2;
+  margin: -20px;
+  background-size: cover;
+  height: 100%;
+}
+.about-section-img {
+  margin: var(--space-between);
+  position: relative;
+  margin-right: 100px;
+}
+.about-section-img::after {
+  top: -40px;
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 300px;
+  border-left: 80px solid var(--sacand-color);
+  border-bottom: 80px solid var(--sacand-color);
+  z-index: -1;
+  right: -150px;
+}
+.about-section-img::before {
+  content: "";
+  width: 100px;
+  height: calc(100% + 100px);
+  background-color: var(--backgrond-main-color);
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  z-index: -1;
+}
+.about-section-img img {
+  width: 300px;
+  height: 400px;
+  background-size: cover;
+}
+.descripstion p {
+  padding: var(--separaiter);
+}
+.descripstion p:first-of-type {
+  font-weight: bold;
+}
+.descripstion hr {
+  width: 50%;
+  border-color: var(--sacand-color);
+  margin-left: 9%;
+}
+.contact {
+  position: relative;
+  padding-top: var(--separaiter);
+  padding-bottom: var(--separaiter);
+}
+.contact {
+  width: 100%;
+  padding-top: var(--separaiter);
+  padding-bottom: 200px;
+  position: relative;
+  background-color: var(--backgrond-main-color);
+}
+.contact h2 {
+  color: var(--backgrond-sacand-color);
+}
+.contact .contant {
+  min-width: 400px;
+  padding-top: var(--separaiter);
+  padding-bottom: calc(var(--separaiter) * 2);
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 4;
+}
+.contant h2 {
+  font-weight: 900;
+  color: var(--main-color);
+}
+.contant a {
+  font-weight: bold;
+  color: var(--sacand-color);
+  font-size: 20px;
+}
+.contact .sousiaal i {
+  margin-left: var(--space-between);
+}
+.contact .sousiaal .fa-youtube {
+  color: red;
+}
+.contact .sousiaal .fa-facebook-f {
+  color: #1877f2;
+}
+.contact .sousiaal .fa-twitter {
+  color: #1da1f2;
+}
+footer {
+  width: 100%;
+  background-color: var(--main-color);
+}
+footer .copy-right {
+  color: white;
+  font-size: 20px;
+}
+.created {
+  font-size: 14px;
+  color: white;
+}
+.created span {
+  color: var(--sacand-color);
+  font-weight: bold;
+}
+footer .copy-right span {
+  color: var(--sacand-color);
+  font-weight: bold;
+}
