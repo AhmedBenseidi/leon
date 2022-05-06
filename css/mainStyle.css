@@ -15,6 +15,9 @@
   text-transform: capitalize;
   line-height: 1.6;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Work Sans", sans-serif;
   transition: all 1s linear;
@@ -214,6 +217,10 @@ main .welcome-wellpaiper p {
   .about .flex-space-between-center {
     flex-wrap: wrap;
     flex-direction: column;
+  }
+  .about-section-img::after,
+  .about-section-img::before {
+    display: none;
   }
 }
 .Portfolio {
